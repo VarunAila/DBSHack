@@ -30,15 +30,14 @@ public class connection
       // iterate through the java resultset
       while (rs.next())
       {
-        int id = rs.getInt("id");
+      
         String firstName = rs.getString("first_name");
         String lastName = rs.getString("last_name");
-        Date dateCreated = rs.getDate("date_created");
-        boolean isAdmin = rs.getBoolean("is_admin");
-        int numPoints = rs.getInt("num_points");
+        String EmailId=rs.getString("email_id");
+        String password=rs.getString("password");
         
         // print the results
-        System.out.format("%s, %s, %s, %s, %s, %s\n", id, firstName, lastName, dateCreated, isAdmin, numPoints);
+        System.out.format("%s, %s, %s, %s, %s, %s\n", id, firstName, lastName, EmailId,password);
       }
       st.close();
     }
